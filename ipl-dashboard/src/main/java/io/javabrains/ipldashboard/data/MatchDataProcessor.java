@@ -23,6 +23,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
     match.setDate(LocalDate.parse(matchInput.getDate()));
     match.setPlayerOfMatch(matchInput.getPlayer_of_match());
+    match.setVenue(matchInput.getVenue());
 
     // Set team 1 and team 2 depending on the innings order
     String firstInningsTeam, secondInningsTeam;
