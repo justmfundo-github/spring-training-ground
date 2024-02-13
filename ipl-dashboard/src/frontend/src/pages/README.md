@@ -1,6 +1,8 @@
 Created this application while going through a JavaBrains tutorial. The purpose is to sharpen and expand my skillset while filling in
 any blanks as it relates to spring development from the full stack perspective. What follows is an application that makes use of Java, Spring boot, Spring mvc, web services and react as a front end. Application is deployed on AWS
 
+Augmentations pending: Navigation controls and security implementation
+
 IPL Dashboard Practice application
 
 Currently Deployed to: http://ipldashboard-env.eba-uyjmmzdb.us-east-1.elasticbeanstalk.com/
