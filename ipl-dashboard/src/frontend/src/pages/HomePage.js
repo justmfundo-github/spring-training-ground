@@ -1,8 +1,6 @@
 import "./HomePage.scss";
 import { React, useEffect, useState } from "react";
 import { TeamTile } from "../components/TeamTile";
-import { Link } from "react-router-dom";
-import { useParams, userParams } from "react-router-dom";
 
 export const HomePage = () => {
   // declaring a state called team and a function called setTeam to populate that state
@@ -12,7 +10,7 @@ export const HomePage = () => {
     //useEffect cannot be asynchronous so we create another function within the useEffect function that is asynchronous
     // fetching teams from the api endpoint
     const fetchAllTeams = async () => {
-      const response = await fetch(`http://localhost:8080/teams`);
+      const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/teams`);
       const data = await response.json();
       console.log(data);
 
@@ -29,7 +27,7 @@ export const HomePage = () => {
 
       <div className="team-grid">
         {teams.map((team) => (
-          <TeamTile teamName={team.teamName} />
+          <TeamTile key={team.id} teamName={team.teamName} />
         ))}
       </div>
     </div>

@@ -15,7 +15,7 @@ export const TeamPage = () => {
     //useEffect cannot be asynchronous so we create another function within the useEffect function that is asynchronous
     const fetchMatches = async () => {
       // fetchMatches is our asynchronous function
-      const response = await fetch(`http://localhost:8080/team/${teamName}`); // fetch returns a promise
+      const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}`); // fetch returns a promise
       const data = await response.json(); // await is used to retrieve information from the fetch promise
       console.log(data);
 
@@ -48,11 +48,11 @@ export const TeamPage = () => {
       </div>
 
       {team.matches.slice(1).map((match) => (
-        <MatchSmallCard teamName={team.teamName} match={match} />
+        <MatchSmallCard key={match.id} teamName={team.teamName} match={match} />
       ))}
 
       <div className="more-link">
-        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More ></Link>
+        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More {">"}</Link>
       </div>
     </div>
   );
