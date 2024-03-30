@@ -4,6 +4,7 @@ import { React, useEffect, useState } from "react";
 import { useParams, userParams } from "react-router-dom";
 import { MatchDetailCard } from "../components/MatchDetailCard";
 import { YearSelector } from "../components/YearSelector";
+import Header from "./Header";
 
 export const MatchPage = () => {
   const [matches, setMatches] = useState([]);
@@ -23,18 +24,21 @@ export const MatchPage = () => {
   }, [teamName, year]); // when this value changes then the useEffect re-runs. I.e. when date changes new match details must be retrieved
 
   return (
-    <div className="MatchPage">
-      <div className="year-selector">
-        <h3>Select Year</h3>
-        <YearSelector teamName={teamName} />
-      </div>
-      <div>
-        <h1 className="page-heading">
-          {teamName} matches in {year}
-        </h1>
-        {matches.map((match) => (
-          <MatchDetailCard key={match.id} teamName={teamName} match={match} />
-        ))}
+    <div>
+      <Header />
+      <div className="MatchPage">
+        <div className="year-selector">
+          <h3>Select Year</h3>
+          <YearSelector teamName={teamName} />
+        </div>
+        <div>
+          <h1 className="page-heading">
+            {teamName} matches in {year}
+          </h1>
+          {matches.map((match) => (
+            <MatchDetailCard key={match.id} teamName={teamName} match={match} />
+          ))}
+        </div>
       </div>
     </div>
   );

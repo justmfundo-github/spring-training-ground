@@ -1,6 +1,7 @@
 import "./HomePage.scss";
 import { React, useEffect, useState } from "react";
 import { TeamTile } from "../components/TeamTile";
+import Header from "./Header";
 
 export const HomePage = () => {
   // declaring a state called team and a function called setTeam to populate that state
@@ -21,9 +22,7 @@ export const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <div className="header-section">
-        <h1 className="app-name">IPL DashBoard Curtesy of JavaBrains Tutorial</h1>
-      </div>
+      <Header />
 
       <div className="team-grid">
         {teams.map((team) => (

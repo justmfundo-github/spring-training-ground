@@ -15,12 +15,12 @@ body {
   font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-color: #586d92;
   color: white;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 a {
-  color: gray;
+  color: darkslategray;
 }
